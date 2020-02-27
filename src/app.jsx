@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template = () => (
-    <h1>Decide App</h1>
+import Header from './Header';
+import Button from './Action';
+
+const jsx = (
+    <div>
+        <Header />
+        <Button />
+    </div>
 );
 
 const appRoot = document.getElementById('app');
-ReactDOM.render(template(), appRoot);
+ReactDOM.render(jsx, appRoot);
