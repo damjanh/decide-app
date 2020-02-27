@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from './Header';
 import Action from './Action';
@@ -6,10 +7,11 @@ import Options from './Options';
 import AddOption from './AddOption';
 
 class DecisionApp extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        const { options } = this.props;
         this.state = {
-            options: ['Option One', 'Option Two', 'Opton Three'],
+            options,
         };
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handleDecide = this.handleDecide.bind(this);
@@ -67,5 +69,13 @@ class DecisionApp extends React.Component {
         );
     }
 }
+
+DecisionApp.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string),
+};
+
+DecisionApp.defaultProps = {
+    options: [],
+};
 
 export default DecisionApp;
