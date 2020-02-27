@@ -12,8 +12,13 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-    title: PropTypes.string.isRequired,
-    subTitle: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    subTitle: PropTypes.string,
+};
+
+Header.defaultProps = {
+    title: 'Decide App',
+    subTitle: 'Let the computer decide!',
 };
 
 export default Header;

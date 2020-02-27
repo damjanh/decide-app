@@ -5,10 +5,6 @@ import Action from './Action';
 import Options from './Options';
 import AddOption from './AddOption';
 
-const appData = {
-    title: 'Decide App',
-    subTitle: 'Let the computer decice!',
-};
 class DecisionApp extends React.Component {
     constructor() {
         super();
@@ -59,7 +55,7 @@ class DecisionApp extends React.Component {
         const { options } = this.state;
         return (
             <div>
-                <Header title={appData.title} subTitle={appData.subTitle} />
+                <Header />
                 <Action optionsLength={options.length} handleDecide={this.handleDecide} />
                 <Options
                     options={options}
