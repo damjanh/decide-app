@@ -18,6 +18,7 @@ class DecisionApp extends React.Component {
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handleDecide = this.handleDecide.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
+        this.handleRemoveOption = this.handleRemoveOption.bind(this);
     }
 
     handleDeleteOptions() {
@@ -32,6 +33,13 @@ class DecisionApp extends React.Component {
         }));
     }
 
+    handleRemoveOption(removeOption) {
+        this.setState((prevState) => {
+            const newOptions = prevState.options.filter((item) => item !== removeOption);
+            return ({ options: newOptions });
+        });
+    }
+
     handleDecide(selectedIndex) {
         const { options } = this.state;
         const selectedOption = options[selectedIndex];
@@ -44,7 +52,11 @@ class DecisionApp extends React.Component {
             <div>
                 <Header title={appData.title} subTitle={appData.subTitle} />
                 <Action optionsLength={options.length} handleDecide={this.handleDecide} />
-                <Options options={options} handleDeleteOptions={this.handleDeleteOptions} />
+                <Options
+                    options={options}
+                    handleDeleteOptions={this.handleDeleteOptions}
+                    handleRemoveOption={this.handleRemoveOption}
+                />
                 <AddOption handleAddOption={this.handleAddOption} />
             </div>
         );
