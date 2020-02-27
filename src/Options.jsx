@@ -10,18 +10,28 @@ class Options extends React.Component {
         this.state = {
             options,
         };
+        this.handleRemoveAll = this.handleRemoveAll.bind(this);
+    }
+
+    handleRemoveAll() {
+        this.setState({
+            options: [],
+        });
     }
 
     render() {
         const { options } = this.state;
         return (
-            <ul>
-                {
-                    options.map((option, index) => (
-                        <Option key={index.toString()} option={option} />
-                    ))
-                }
-            </ul>
+            <div>
+                <button type="button" onClick={this.handleRemoveAll}>Remove All</button>
+                <ul>
+                    {
+                        options.map((option, index) => (
+                            <Option key={index.toString()} option={option} />
+                        ))
+                    }
+                </ul>
+            </div>
         );
     }
 }
