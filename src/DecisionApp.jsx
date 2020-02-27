@@ -8,6 +8,7 @@ import AddOption from './AddOption';
 const appData = {
     title: 'Decide App',
     subTitle: 'Let the computer decice!',
+    options: ['Option One', 'Option Two', 'Opton Three'],
 };
 class DecisionApp extends React.Component {
     constructor() {
@@ -20,7 +21,7 @@ class DecisionApp extends React.Component {
             <div>
                 <Header title={appData.title} subTitle={appData.subTitle} />
                 <Button />
-                <Options />
+                <Options options={appData.options} />
                 <AddOption />
             </div>
         );

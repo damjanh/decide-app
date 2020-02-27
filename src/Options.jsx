@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Option from './Option';
 
 class Options extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        const { options } = props;
         this.state = {
-            options: ['Option One', 'Option Two'],
+            options,
         };
     }
 
@@ -23,5 +25,9 @@ class Options extends React.Component {
         );
     }
 }
+
+Options.propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Options;
