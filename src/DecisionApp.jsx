@@ -5,6 +5,10 @@ import Button from './Action';
 import Options from './Options';
 import AddOption from './AddOption';
 
+const appData = {
+    title: 'Decide App',
+    subTitle: 'Let the computer decice!',
+};
 class DecisionApp extends React.Component {
     constructor() {
         super();
@@ -14,7 +18,7 @@ class DecisionApp extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header title={appData.title} subTitle={appData.subTitle} />
                 <Button />
                 <Options />
                 <AddOption />
