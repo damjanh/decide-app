@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 class AddOption extends React.Component {
     constructor() {
         super();
+        this.state = {
+            error: undefined,
+        };
         this.handleOptionSubmit = this.handleOptionSubmit.bind(this);
     }
 
@@ -11,14 +14,16 @@ class AddOption extends React.Component {
         const { handleAddOption } = this.props;
         event.preventDefault();
         const option = event.target.elements.option.value.trim();
-        if (option) {
-            handleAddOption(option);
-        }
+        const error = handleAddOption(option);
+
+        this.setState({ error });
     }
 
     render() {
+        const { error } = this.state;
         return (
             <div>
+                {error && <p>{error}</p>}
                 <form onSubmit={this.handleOptionSubmit}>
                     <input type="text" name="option" />
                     <button type="submit">Add Option</button>

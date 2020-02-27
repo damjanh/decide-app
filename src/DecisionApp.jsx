@@ -28,9 +28,17 @@ class DecisionApp extends React.Component {
     }
 
     handleAddOption(newOption) {
+        if (!newOption) {
+            return 'Enter a valid option.';
+        }
+        const { options } = this.state;
+        if (options.indexOf(newOption) > -1) {
+            return 'Item already exists.';
+        }
         this.setState((prevState) => ({
             options: [...prevState.options, newOption],
         }));
+        return undefined;
     }
 
     handleRemoveOption(removeOption) {
