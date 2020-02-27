@@ -48,8 +48,9 @@ class DecisionApp extends React.Component {
         });
     }
 
-    handleDecide(selectedIndex) {
+    handleDecide() {
         const { options } = this.state;
+        const selectedIndex = Math.floor(Math.random() * options.length);
         const selectedOption = options[selectedIndex];
         console.log(`Selected option is: ${selectedOption}`);
     }
