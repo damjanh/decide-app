@@ -19,6 +19,27 @@ class DecisionApp extends React.Component {
         this.handleRemoveOption = this.handleRemoveOption.bind(this);
     }
 
+    componentDidMount() {
+        let options;
+        try {
+            options = JSON.parse(localStorage.getItem('options'));
+        } catch (_) {
+            // Ignore
+        }
+        if (options) {
+            this.setState({
+                options,
+            });
+        }
+    }
+
+    componentDidUpdate(_, prevState) {
+        const { options } = this.state;
+        if (prevState.options.length !== options.length) {
+            localStorage.setItem('options', JSON.stringify(options));
+        }
+    }
+
     handleDeleteOptions() {
         this.setState({
             options: [],
