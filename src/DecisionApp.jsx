@@ -5,10 +5,12 @@ import Header from './Header';
 import Action from './Action';
 import Options from './Options';
 import AddOption from './AddOption';
+import OptionModal from './OptionModal';
 
 class DecisionApp extends React.Component {
     state = {
         options: this.props.options,
+        selectedOption: 'undefined',
     };
 
     componentDidMount() {
@@ -63,11 +65,19 @@ class DecisionApp extends React.Component {
         const { options } = this.state;
         const selectedIndex = Math.floor(Math.random() * options.length);
         const selectedOption = options[selectedIndex];
-        console.log(`Selected option is: ${selectedOption}`);
+        this.setState({
+            selectedOption,
+        });
+    }
+
+    handleCloseModal = () => {
+        this.setState({
+            selectedOption: 'undefined',
+        });
     }
 
     render() {
-        const { options } = this.state;
+        const { options, selectedOption } = this.state;
         return (
             <div>
                 <Header />
@@ -78,6 +88,10 @@ class DecisionApp extends React.Component {
                     handleRemoveOption={this.handleRemoveOption}
                 />
                 <AddOption handleAddOption={this.handleAddOption} />
+                <OptionModal
+                    selectedOption={selectedOption}
+                    handleCloseModal={this.handleCloseModal}
+                />
             </div>
         );
     }
