@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class AddOption extends React.Component {
+    state = {
+        error: undefined,
+    };
+
     constructor() {
         super();
-        this.state = {
-            error: undefined,
-        };
         this.handleOptionSubmit = this.handleOptionSubmit.bind(this);
     }
 

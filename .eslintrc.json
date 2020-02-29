@@ -11,6 +11,7 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -19,7 +20,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "babel"
     ],
     "rules": {
     // Ignore line break style
@@ -29,6 +31,7 @@
     // Indent JSX with 4 spaces
     "react/jsx-indent": ["error", 4],
     // Indent props with 4 spaces
-    "react/jsx-indent-props": ["error", 4]
+    "react/jsx-indent-props": ["error", 4],
+    "react/state-in-constructor": [2, "never"]
     }
 }
