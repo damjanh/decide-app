@@ -31,7 +31,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -46,7 +46,7 @@ module.exports = {
         }),
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.scss'],
+        extensions: ['.js', '.jsx', '.scss', '.css'],
     },
     devtool: 'cheap-module-evel-source-map',
 };
