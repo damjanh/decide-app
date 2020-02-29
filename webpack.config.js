@@ -30,4 +30,5 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'],
     },
+    devtool: 'cheap-module-evel-source-map',
 };
