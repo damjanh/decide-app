@@ -6,12 +6,7 @@ class AddOption extends React.Component {
         error: undefined,
     };
 
-    constructor() {
-        super();
-        this.handleOptionSubmit = this.handleOptionSubmit.bind(this);
-    }
-
-    handleOptionSubmit(event) {
+    handleOptionSubmit = (event) => {
         const { handleAddOption } = this.props;
         event.preventDefault();
         const option = event.target.elements.option.value.trim();

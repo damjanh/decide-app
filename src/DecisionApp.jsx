@@ -7,17 +7,9 @@ import Options from './Options';
 import AddOption from './AddOption';
 
 class DecisionApp extends React.Component {
-    constructor(props) {
-        super(props);
-        const { options } = this.props;
-        this.state = {
-            options,
-        };
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handleDecide = this.handleDecide.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleRemoveOption = this.handleRemoveOption.bind(this);
-    }
+    state = {
+        options: this.props.options,
+    };
 
     componentDidMount() {
         let options;
@@ -40,13 +32,13 @@ class DecisionApp extends React.Component {
         }
     }
 
-    handleDeleteOptions() {
+    handleDeleteOptions = () => {
         this.setState({
             options: [],
         });
     }
 
-    handleAddOption(newOption) {
+    handleAddOption = (newOption) => {
         if (!newOption) {
             return 'Enter a valid option.';
         }
@@ -60,14 +52,14 @@ class DecisionApp extends React.Component {
         return undefined;
     }
 
-    handleRemoveOption(removeOption) {
+    handleRemoveOption = (removeOption) => {
         this.setState((prevState) => {
             const newOptions = prevState.options.filter((item) => item !== removeOption);
             return ({ options: newOptions });
         });
     }
 
-    handleDecide() {
+    handleDecide = () => {
         const { options } = this.state;
         const selectedIndex = Math.floor(Math.random() * options.length);
         const selectedOption = options[selectedIndex];
