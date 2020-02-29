@@ -81,17 +81,19 @@ class DecisionApp extends React.Component {
         return (
             <div>
                 <Header />
-                <Action optionsLength={options.length} handleDecide={this.handleDecide} />
-                <Options
-                    options={options}
-                    handleDeleteOptions={this.handleDeleteOptions}
-                    handleRemoveOption={this.handleRemoveOption}
-                />
-                <AddOption handleAddOption={this.handleAddOption} />
-                <OptionModal
-                    selectedOption={selectedOption}
-                    handleCloseModal={this.handleCloseModal}
-                />
+                <div className="container">
+                    <Action optionsLength={options.length} handleDecide={this.handleDecide} />
+                    <Options
+                        options={options}
+                        handleDeleteOptions={this.handleDeleteOptions}
+                        handleRemoveOption={this.handleRemoveOption}
+                    />
+                    <AddOption handleAddOption={this.handleAddOption} />
+                    <OptionModal
+                        selectedOption={selectedOption}
+                        handleCloseModal={this.handleCloseModal}
+                    />
+                </div>
             </div>
         );
     }
