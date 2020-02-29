@@ -1,5 +1,2 @@
-$barnd-color: blue;
-
-* {
-    color: $barnd-color;
-}
+@import './base/base';
+@import './components/header';
