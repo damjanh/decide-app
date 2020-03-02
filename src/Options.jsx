@@ -18,7 +18,7 @@ const Options = (props) => {
                 </button>
             </div>
             {
-                options.length === 0 && <p>No options to choose from.</p>
+                options.length === 0 && <p className="widget__message">No options to choose from.</p>
             }
             <ul>
                 {
