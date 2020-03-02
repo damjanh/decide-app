@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Option = (props) => {
-    const { option, handleRemoveOption } = props;
+    const { option, index, handleRemoveOption } = props;
     return (
         <div className="option">
-            {option}
+            <p className="option__text">
+                {index}
+                .&nbsp;
+                {option}
+            </p>
             <button
                 className="button button--link"
                 type="button"
@@ -21,6 +25,7 @@ const Option = (props) => {
 
 Option.propTypes = {
     option: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
     handleRemoveOption: PropTypes.func.isRequired,
 };
 
