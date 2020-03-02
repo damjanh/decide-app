@@ -5,6 +5,7 @@ const Action = (props) => {
     const { optionsLength, handleDecide } = props;
     return (
         <button
+            className="big-button"
             type="button"
             onClick={handleDecide}
             disabled={optionsLength === 0}
