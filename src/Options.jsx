@@ -20,7 +20,7 @@ const Options = (props) => {
             {
                 options.length === 0 && <p className="widget__message">No options to choose from.</p>
             }
-            <ul>
+            <div>
                 {
                     options.map((option, index) => (
                         <Option
@@ -30,7 +30,7 @@ const Options = (props) => {
                         />
                     ))
                 }
-            </ul>
+            </div>
         </div>
     );
 };

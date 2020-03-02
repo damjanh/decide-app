@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Option = (props) => {
     const { option, handleRemoveOption } = props;
     return (
-        <li>
+        <div className="option">
             {option}
             <button
                 className="button button--link"
@@ -15,7 +15,7 @@ const Option = (props) => {
             >
                 Remove
             </button>
-        </li>
+        </div>
     );
 };
 
