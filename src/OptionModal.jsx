@@ -9,10 +9,18 @@ const OptionModal = (props) => {
             isOpen={selectedOption !== 'undefined'}
             contentLabel="Selected Option"
             onRequestClose={handleCloseModal}
+            closeTimeoutMS={200}
+            className="modal"
         >
-            <h3>Selected Option</h3>
-            <p>{selectedOption}</p>
-            <button type="button" onClick={handleCloseModal}>Ok</button>
+            <h3 className="modal__title">Selected Option</h3>
+            {selectedOption !== 'undefined' && <p className="modal__body">{selectedOption}</p>}
+            <button
+                className="button"
+                type="button"
+                onClick={handleCloseModal}
+            >
+                Okay
+            </button>
         </Modal>
     );
 };
