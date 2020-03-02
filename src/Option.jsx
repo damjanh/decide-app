@@ -5,8 +5,9 @@ const Option = (props) => {
     const { option, handleRemoveOption } = props;
     return (
         <li>
-            <h3>{option}</h3>
+            {option}
             <button
+                className="button button--link"
                 type="button"
                 onClick={() => {
                     handleRemoveOption(option);
