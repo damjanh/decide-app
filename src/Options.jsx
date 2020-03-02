@@ -7,13 +7,16 @@ const Options = (props) => {
     const { options, handleDeleteOptions, handleRemoveOption } = props;
     return (
         <div>
-            <button
-                className="button button--link"
-                type="button"
-                onClick={handleDeleteOptions}
-            >
-                Remove All
-            </button>
+            <div className="widget-header">
+                <h3 className="widget-header__title">Your Options:</h3>
+                <button
+                    className="button button--link"
+                    type="button"
+                    onClick={handleDeleteOptions}
+                >
+                    Remove All
+                </button>
+            </div>
             {
                 options.length === 0 && <p>No options to choose from.</p>
             }
